@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_hooks_sample/use_future_page.dart';
 import 'package:flutter_hooks_sample/use_state_page.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Hooks Sample',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
       home: const MyHomePage(),
     );
@@ -45,6 +46,22 @@ class MyHomePage extends HookWidget {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
                     return const UseStatePage();
+                  }));
+                },
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: const CircleAvatar(
+                  child: Icon(Icons.mood),
+                ),
+                title: const Text('Package Info'),
+                subtitle: const Text('useFuture and useMemoized Sample'),
+                trailing: const Icon(Icons.keyboard_arrow_right),
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return const UseFuturePage();
                   }));
                 },
               ),

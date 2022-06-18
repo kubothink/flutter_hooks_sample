@@ -9,6 +9,7 @@ class UseStatePage extends HookWidget {
     final counter = useState(0);
     final nullableCounter = useState<int?>(null);
     final stateCounter = useState(StateModel());
+    final textStyleHL4 = Theme.of(context).textTheme.headline4;
 
     return Scaffold(
       appBar: AppBar(
@@ -23,21 +24,21 @@ class UseStatePage extends HookWidget {
             ),
             Text(
               counter.value.toString(),
-              style: Theme.of(context).textTheme.headline4,
+              style: textStyleHL4,
             ),
             const Text(
               'Nullable Value',
             ),
             Text(
               nullableCounter.value?.toString() ?? 'NULL',
-              style: Theme.of(context).textTheme.headline4,
+              style: textStyleHL4,
             ),
             const Text(
               'State Class Value',
             ),
             Text(
               stateCounter.value.countValue.toString(),
-              style: Theme.of(context).textTheme.headline4,
+              style: textStyleHL4,
             ),
           ],
         ),
